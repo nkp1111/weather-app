@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Sidebar, FrontPage } from './components'
-import { getWeatherData } from './utils/getWeatherData'
+import { weatherDataForNDays } from './utils/weatherDataForNDays'
 
 const App = () => {
 
-  getWeatherData()
+  const [location, setLocation] = useState("");
+
+  useEffect(() => {
+    weatherDataForNDays(6)
+  }, []);
+
   return (
     <main className='app'>
       <h1 className='invisible text-center position-absolute'>Weather App</h1>
