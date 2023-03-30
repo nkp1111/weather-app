@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiOutlineAim } from 'react-icons/ai'
 import { MdLocationPin } from 'react-icons/md'
+import { RxDotFilled } from 'react-icons/rx'
 
 import { images } from '../constants'
 
@@ -24,7 +25,9 @@ const Sidebar = () => {
         </div>
         <div className="time-and-place">
           <div className="time">
-            Today . Fri 5 Jun
+            Today
+            <RxDotFilled />
+            {new Date().toUTCString().split(" ").slice(0, 3).join(" ")}
           </div>
           <div className="place">
             <MdLocationPin className='location-icon' />
