@@ -15,7 +15,7 @@ export const formatDate = (date) => {
   weatherDate[1] = temp
 
   weatherDate = weatherDate.join("-")
-  return date
+  return weatherDate
 }
 
 

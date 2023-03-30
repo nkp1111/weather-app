@@ -6,16 +6,23 @@ import { weatherDataForNDays } from './utils/weatherDataForNDays'
 const App = () => {
 
   const [location, setLocation] = useState("");
+  const [weatherData, setWeatherData] = useState([]);
 
   useEffect(() => {
-    weatherDataForNDays(6)
+    let response = weatherDataForNDays(6, location)
+    response.then(data => {
+      setWeatherData(data)
+    })
   }, []);
+
+
+
 
   return (
     <main className='app'>
       <h1 className='invisible text-center position-absolute'>Weather App</h1>
-      <Sidebar />
-      <FrontPage />
+      <Sidebar weatherData={weatherData} />
+      <FrontPage weatherData={weatherData} />
     </main>
   )
 }
