@@ -66,4 +66,16 @@ h6 {
 body {
   font-size: var(--base-font-size);
   font-family: var(--base-font-family), sans-serif;
+  background: var(--main-background);
+  color: var(--white-color);
+}
+
+main {
+  height: 100vh;
+}
+
+.app__sidebar {
+  width: 40%;
+  background: var(--sidebar-background);
+  height: 100%;
 }

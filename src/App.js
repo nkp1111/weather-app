@@ -15,11 +15,8 @@ const App = () => {
     })
   }, []);
 
-
-
-
   return (
-    <main className='app'>
+    <main className='app d-flex'>
       <h1 className='invisible text-center position-absolute'>Weather App</h1>
       <Sidebar weatherData={weatherData} />
       <FrontPage weatherData={weatherData} />
