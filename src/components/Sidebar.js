@@ -10,7 +10,7 @@ import { viewDate } from '../utils/viewDate'
 const Sidebar = ({ weatherData }) => {
   const { location } = weatherData
   return (
-    <div className='app__sidebar app__flex'>
+    <div className='app__sidebar flex-column'>
       <div className='app__sidebar-top'>
         <button className="btn">Search for places</button>
         <AiOutlineAim className='aim-icon' />
