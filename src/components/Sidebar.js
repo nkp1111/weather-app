@@ -4,9 +4,11 @@ import { MdLocationPin } from 'react-icons/md'
 import { RxDotFilled } from 'react-icons/rx'
 
 import { images } from '../constants'
+import { viewDate } from '../utils/viewDate'
 
 
-const Sidebar = () => {
+const Sidebar = ({ weatherData }) => {
+  const { location } = weatherData
   return (
     <div className='app__sidebar app__flex'>
       <div className='app__sidebar-top'>
@@ -27,11 +29,11 @@ const Sidebar = () => {
           <div className="time">
             Today
             <RxDotFilled />
-            {new Date().toUTCString().split(" ").slice(0, 3).join(" ")}
+            {viewDate()}
           </div>
           <div className="place">
             <MdLocationPin className='location-icon' />
-            Place
+            {location?.name || "Ahmedabad"}
           </div>
         </div>
       </div>
