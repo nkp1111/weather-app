@@ -11,7 +11,7 @@
     </a>
     <span> | </span>
     <a href="https://github.com/nkp1111/weather-app">
-      GitHUb
+      GitHub
     </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
