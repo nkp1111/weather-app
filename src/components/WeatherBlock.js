@@ -1,19 +1,19 @@
 import React from 'react'
 
 const WeatherBlock = ({ data }) => {
-  const { forecast, ind } = data
-  const { date, day: { maxtemp_c, mintemp_c, condition: { icon, text } } } = forecast.forecastday[0]
+  const { temperature: { cel, fah }, condition, icon, ind, date } = data
+
   return (
     <article className='card bg-dark'>
       <h2>
         {ind === 0
           ? "Tomorrow"
-          : data?.forecast.forecastday[0].date}
+          : date}
       </h2>
-      <img src={icon} alt={text} />
+      <img src={icon} alt={condition} />
       <div>
-        <span>{maxtemp_c}</span>
-        <span>{mintemp_c}</span>
+        <span>{cel.max}</span>
+        <span>{cel.min}</span>
       </div>
     </article>
   )

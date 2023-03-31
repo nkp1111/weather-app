@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { Sidebar, FrontPage } from './components'
-import { weatherDataForNDays } from './utils/weatherDataForNDays'
+import { weatherDataForNDays, formatWeatherData } from './utils'
 
 const App = () => {
 
@@ -11,6 +11,7 @@ const App = () => {
   useEffect(() => {
     let response = weatherDataForNDays(6, location)
     response.then(data => {
+      data = formatWeatherData(data)
       setWeatherData(data)
     })
   }, []);

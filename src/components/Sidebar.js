@@ -4,7 +4,7 @@ import { MdLocationPin } from 'react-icons/md'
 import { RxDotFilled } from 'react-icons/rx'
 
 import { images } from '../constants'
-import { viewDate } from '../utils/viewDate'
+import { viewDate } from '../utils'
 
 
 const Sidebar = ({ weatherData }) => {

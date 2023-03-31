@@ -7,8 +7,8 @@ import WeatherBlock from './WeatherBlock'
 const FontPage = ({ weatherData }) => {
 
   if (weatherData && weatherData[0]) {
-    let { maxwind_mph: wind, avghumidity: humidity, avgvis_miles: visibility } = weatherData[0].forecast.forecastday[0].day
-    let { pressure_mb } = weatherData[0].forecast.forecastday[0].hour[0]
+    let { wind_speed, humidity, visibility, pressure } = weatherData[0]
+
     return (
       <div className='app__frontpage'>
 
@@ -33,7 +33,7 @@ const FontPage = ({ weatherData }) => {
                 <article>
                   <h3>Wind status</h3>
                   <div className="app__frontpage-info">
-                    <span className='info-value'>{wind}</span>
+                    <span className='info-value'>{wind_speed}</span>
                     <span className='info-unit'>mph</span>
                     <span className='play-icon-holder'>
                       <BsFillPlayFill />
@@ -70,7 +70,7 @@ const FontPage = ({ weatherData }) => {
                 <article>
                   <h3>Air Pressure</h3>
                   <div className="app__frontpage-info">
-                    <span className='info-value'>{pressure_mb}</span>
+                    <span className='info-value'>{pressure}</span>
                     <span className='info-unit'> mb</span>
                   </div>
                 </article>
