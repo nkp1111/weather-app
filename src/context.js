@@ -10,7 +10,7 @@ const AppProvider = ({ children }) => {
   const [showSearchForm, setShowSearchForm] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const handleLocationChange = (location) => {
     setLoading(true)
     let response = weatherDataForNDays(6, location)
     response.then(data => {
@@ -18,7 +18,11 @@ const AppProvider = ({ children }) => {
       setWeatherData(data)
       setLoading(false)
     })
-  }, []);
+  }
+
+  useEffect(() => {
+    handleLocationChange(location)
+  }, [location]);
 
   console.log(location)
 

@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react'
+import useGlobalContext from '../context'
 
 const SearchOptions = ({ location, setLocation, input }) => {
 
+  const { setShowSearchForm } = useGlobalContext()
   const handleDropLocation = () => {
     // on clicking option change location and filled search form with name
     const locations = document.querySelectorAll(".dropdown-item")
     locations.forEach(location => {
       location.addEventListener("click", (e) => {
         setLocation(e.currentTarget.innerText)
-        input.current.value = e.currentTarget.innerText
+        setShowSearchForm(false)
       })
     })
   }

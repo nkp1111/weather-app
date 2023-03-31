@@ -13,6 +13,7 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setLocation(inputRef.current.value)
+    setShowSearchForm(false)
   }
 
   return (
@@ -33,7 +34,11 @@ const SearchForm = () => {
         </form>
       </div>
       <div className="location-option">
-        <SearchOptions location={location} setLocation={setLocation} input={inputRef} />
+        <SearchOptions
+          location={location}
+          setLocation={setLocation}
+          input={inputRef}
+          setShowSearchForm={setShowSearchForm} />
       </div>
     </div>
   )
