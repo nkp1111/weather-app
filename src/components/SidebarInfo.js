@@ -15,7 +15,7 @@ const SidebarInfo = () => {
   if (loading) {
     return <Spinner message="Wait for a while" />
   }
-  const { location } = weatherData
+  const { location, condition, icon, temperature: { cel, fah } } = weatherData[0]
   return (
     <div className='app__sidebar-info'>
       <div className='app__sidebar-top'>
@@ -24,14 +24,14 @@ const SidebarInfo = () => {
         <AiOutlineAim className='aim-icon' />
       </div>
       <div className="app__sidebar-image">
-        <img src={images.Shower} alt="sun and cloud with little rainfall" />
+        <img src={icon} alt={condition} />
       </div>
       <div className="app__sidebar-info">
         <div className="temp">
-          <span>15</span> &#8451;
+          <span>{(cel.max + cel.min) / 2}</span> &#8451;
         </div>
         <div className="condition">
-          Shower
+          {condition}
         </div>
         <div className="time-and-place">
           <div className="time">
@@ -41,7 +41,7 @@ const SidebarInfo = () => {
           </div>
           <div className="place">
             <MdLocationPin className='location-icon' />
-            {location?.name || "Ahmedabad"}
+            {location?.name || "Unknown"}
           </div>
         </div>
       </div>
