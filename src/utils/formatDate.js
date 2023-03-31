@@ -1,4 +1,4 @@
-export const formatDate = (date) => {
+const formatDate = (date) => {
   // format date to yyyy-mm-dd
   let weatherDate = date.toLocaleDateString().replaceAll("/", "-").split("-").reverse()
 
@@ -18,5 +18,5 @@ export const formatDate = (date) => {
   return weatherDate
 }
 
-
+export default formatDate
 

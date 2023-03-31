@@ -1,7 +1,6 @@
-import { getWeatherData } from './getWeatherData'
-import { formatDate } from './formatDate'
+import { getWeatherData, formatDate } from './'
 
-export const weatherDataForNDays = async (n = 1, location = "") => {
+const weatherDataForNDays = async (n = 1, location = "") => {
   // get weather data for n number of days until today
   const today = new Date()
   const currentYear = today.getFullYear()
@@ -16,3 +15,5 @@ export const weatherDataForNDays = async (n = 1, location = "") => {
   }
   return weatherData
 }
+
+export default weatherDataForNDays

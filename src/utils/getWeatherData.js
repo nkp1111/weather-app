@@ -1,4 +1,4 @@
-export const getWeatherData = async (location, date = "today") => {
+const getWeatherData = async (location, date = "today") => {
   // returns weather data of a particular location and date default today
   // date format "yyyy-mm-dd"
   const baseUrl = "http://api.weatherapi.com/v1/"
@@ -19,3 +19,4 @@ export const getWeatherData = async (location, date = "today") => {
   return data
 }
 
+export default getWeatherData

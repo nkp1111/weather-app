@@ -1,4 +1,4 @@
-export const viewDate = (date) => {
+const viewDate = (date) => {
   let formattedDate
   if (!date) {
     date = new Date()
@@ -11,3 +11,5 @@ export const viewDate = (date) => {
 
   return formattedDate
 }
+
+export default viewDate
