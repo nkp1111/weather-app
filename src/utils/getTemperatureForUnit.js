@@ -13,7 +13,7 @@ const formatTemperature = (temperature, unit) => {
     minTemp = temperature.fah.min
     Icon = TbTemperatureFahrenheit
   }
-  const avgTemp = ((maxTemp + minTemp) / 2).toPrecision(4)
+  const avgTemp = ((maxTemp + minTemp) / 2).toFixed()
   return { maxTemp, minTemp, avgTemp, Icon }
 }
 

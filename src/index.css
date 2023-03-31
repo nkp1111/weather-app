@@ -53,14 +53,19 @@ h6 {
   --main-background: #100E1D;
   --humidity-bar-background: #FFEC65;
   --btn-background: #3C47E9;
+  --btn-background2: #6E707A;
 
   --input-border: #616475;
 
   --white-color: #E7E7EB;
+  --gray-color: #A09FB1;
 
   --base-font-family: "Raleway";
   --base-font-size: 18px;
   --sidebar-heading-size: 8rem;
+
+  --padding-x: 5vw;
+  --padding-y: 5vh;
 }
 
 body {
@@ -72,10 +77,21 @@ body {
 
 main {
   height: 100vh;
+  width: 100vw;
 }
 
 .app__sidebar {
   width: 40%;
   background: var(--sidebar-background);
   height: 100%;
+}
+
+.app__frontpage {
+  flex: 1;
+}
+
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

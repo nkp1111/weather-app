@@ -23,30 +23,39 @@ const SidebarInfo = () => {
       {/* open search bar for different location */}
       <div className='app__sidebar-top'>
         <button className="btn"
-          onClick={() => setShowSearchForm(true)}>Search for places</button>
-        <AiOutlineAim className='aim-icon' />
+          onClick={() => setShowSearchForm(true)}>
+          Search for places
+        </button>
+        <span>
+          <AiOutlineAim className='aim-icon' />
+        </span>
       </div>
       {/* show weather icon  */}
-      <div className="app__sidebar-image">
-        <img src={icon} alt={condition} />
+      <div className="app__sidebar-image app__flex">
+        <img src={images.CloudBackground} alt="cloud background" className='background' />
+        <img src={icon} alt={condition} className='main-image' />
       </div>
       {/* show temperature stats  */}
-      <div className="app__sidebar-info">
-        <div className="temp">
+      <div className="app__sidebar-stats">
+        <div className="temp app__flex">
           <span>{avgTemp}</span>
-          <Icon />
+          <span><Icon /></span>
         </div>
         <div className="condition">
           {condition}
         </div>
         <div className="time-and-place">
-          <div className="time">
+          <div className="time app__flex">
             Today
-            <RxDotFilled />
+            <span>
+              <RxDotFilled />
+            </span>
             {viewDate()}
           </div>
-          <div className="place">
-            <MdLocationPin className='location-icon' />
+          <div className="place app__flex" onClick={() => setShowSearchForm(true)}>
+            <span>
+              <MdLocationPin className='location-icon' />
+            </span>
             {location?.name || "Unknown"}
           </div>
         </div>
