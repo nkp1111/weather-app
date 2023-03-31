@@ -9,6 +9,7 @@ const AppProvider = ({ children }) => {
   const [weatherData, setWeatherData] = useState([]);
   const [showSearchForm, setShowSearchForm] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [temperatureUnit, setTemperatureUnit] = useState("cel");
 
   const handleLocationChange = (location) => {
     setLoading(true)
@@ -35,6 +36,8 @@ const AppProvider = ({ children }) => {
         setLocation,
         setShowSearchForm,
         loading,
+        temperatureUnit,
+        setTemperatureUnit,
       }}
     >
       {children}

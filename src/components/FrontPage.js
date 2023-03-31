@@ -9,7 +9,7 @@ import Spinner from './Spinner'
 
 const FontPage = () => {
 
-  const { weatherData, loading } = useGlobalContext()
+  const { weatherData, loading, temperatureUnit, setTemperatureUnit, } = useGlobalContext()
 
   if (loading) {
     return <Spinner message="Loading data. Please wait..." />
@@ -20,13 +20,15 @@ const FontPage = () => {
   return (
     <div className='app__frontpage'>
 
-      <div className="app__frontpage-temps">
-        <span className='temp-celsius'>
+      <div className="app__frontpage-temps d-flex justify-content-end align-items-center">
+        <button className={`btn temp-btn ${temperatureUnit === "cel" && "active"}`}
+          onClick={() => setTemperatureUnit("cel")}>
           <TbTemperatureCelsius />
-        </span>
-        <span className='temp-fahren'>
+        </button>
+        <button className={`btn temp-btn ${temperatureUnit === "fah" && "active"}`}
+          onClick={() => setTemperatureUnit("fah")}>
           <TbTemperatureFahrenheit />
-        </span>
+        </button>
       </div>
 
       <div className="app__frontpage-weathers d-flex">

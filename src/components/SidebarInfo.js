@@ -4,31 +4,37 @@ import { MdLocationPin } from 'react-icons/md'
 import { RxDotFilled } from 'react-icons/rx'
 
 import { images } from '../constants'
-import { viewDate } from '../utils'
+import { viewDate, getTemperatureForUnit } from '../utils'
 import useGlobalContext from '../context'
 import Spinner from './Spinner'
 
 const SidebarInfo = () => {
 
-  const { weatherData, setShowSearchForm, loading } = useGlobalContext()
+  const { weatherData, setShowSearchForm, loading, temperatureUnit } = useGlobalContext()
 
   if (loading) {
     return <Spinner message="Wait for a while" />
   }
-  const { location, condition, icon, temperature: { cel, fah } } = weatherData[0]
+  const { location, condition, icon, temperature } = weatherData[0]
+  const { avgTemp, Icon } = getTemperatureForUnit(temperature, temperatureUnit)
+
   return (
     <div className='app__sidebar-info'>
+      {/* open search bar for different location */}
       <div className='app__sidebar-top'>
         <button className="btn"
           onClick={() => setShowSearchForm(true)}>Search for places</button>
         <AiOutlineAim className='aim-icon' />
       </div>
+      {/* show weather icon  */}
       <div className="app__sidebar-image">
         <img src={icon} alt={condition} />
       </div>
+      {/* show temperature stats  */}
       <div className="app__sidebar-info">
         <div className="temp">
-          <span>{(cel.max + cel.min) / 2}</span> &#8451;
+          <span>{avgTemp}</span>
+          <Icon />
         </div>
         <div className="condition">
           {condition}

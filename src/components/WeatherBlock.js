@@ -1,19 +1,23 @@
 import React from 'react'
 
-const WeatherBlock = ({ data }) => {
-  const { temperature: { cel, fah }, condition, icon, ind, date } = data
+import { viewDate, getTemperatureForUnit } from '../utils'
+import useGlobalContext from '../context'
 
+const WeatherBlock = ({ data }) => {
+  const { temperatureUnit } = useGlobalContext()
+  const { temperature, condition, icon, ind, date } = data
+  const { maxTemp, minTemp, Icon } = getTemperatureForUnit(temperature, temperatureUnit)
   return (
     <article className='card bg-dark'>
       <h2>
         {ind === 0
           ? "Tomorrow"
-          : date}
+          : viewDate(date)}
       </h2>
       <img src={icon} alt={condition} />
-      <div>
-        <span>{cel.max}</span>
-        <span>{cel.min}</span>
+      <div className='d-flex align-items-center justify-content-between'>
+        <span>{maxTemp}<Icon /></span>
+        <span>{minTemp}<Icon /></span>
       </div>
     </article>
   )
