@@ -8,14 +8,19 @@ const AppProvider = ({ children }) => {
   const [location, setLocation] = useState("");
   const [weatherData, setWeatherData] = useState([]);
   const [showSearchForm, setShowSearchForm] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true)
     let response = weatherDataForNDays(6, location)
     response.then(data => {
       data = formatWeatherData(data)
       setWeatherData(data)
+      setLoading(false)
     })
   }, []);
+
+  console.log(location)
 
   return (
     <AppContext.Provider
@@ -25,6 +30,7 @@ const AppProvider = ({ children }) => {
         showSearchForm,
         setLocation,
         setShowSearchForm,
+        loading,
       }}
     >
       {children}
