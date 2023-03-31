@@ -4,9 +4,11 @@ import { TbTemperatureCelsius, TbTemperatureFahrenheit } from 'react-icons/tb'
 import WeatherBlock from './WeatherBlock'
 import { highlightsData } from '../lib/data'
 import HighlightInfo from './HighlightInfo'
+import useGlobalContext from '../context'
 
-const FontPage = ({ weatherData }) => {
+const FontPage = () => {
 
+  const { weatherData } = useGlobalContext()
   if (weatherData && weatherData[0]) {
     let { wind_speed, humidity, visibility, pressure } = weatherData[0]
 

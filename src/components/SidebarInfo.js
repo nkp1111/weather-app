@@ -5,8 +5,10 @@ import { RxDotFilled } from 'react-icons/rx'
 
 import { images } from '../constants'
 import { viewDate } from '../utils'
+import useGlobalContext from '../context'
 
-const SidebarInfo = ({ weatherData, setShowSearchForm }) => {
+const SidebarInfo = () => {
+  const { weatherData, setShowSearchForm } = useGlobalContext()
   const { location } = weatherData
   return (
     <div className='app__sidebar-info'>
