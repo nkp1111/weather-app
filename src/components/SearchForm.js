@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { GrClose, GrSearch } from 'react-icons/gr'
 import { HiOutlineChevronRight } from 'react-icons/hi'
 
 import useGlobalContext from '../context'
+import SearchOptions from './SearchOptions'
 
 const SearchForm = () => {
 
-  const { setShowSearchForm, location } = useGlobalContext()
+  const inputRef = useRef()
+
+  const { setShowSearchForm, location, setLocation } = useGlobalContext()
   const handleSubmit = (e) => {
     e.preventDefault()
+    setLocation(inputRef.current.value)
   }
 
   return (
@@ -23,10 +27,13 @@ const SearchForm = () => {
         <form onSubmit={(e) => handleSubmit(e)}>
           <label>
             <GrSearch />
-            <input type="text" />
+            <input type="text" ref={inputRef} />
           </label>
           <button className='btn'>Search</button>
         </form>
+      </div>
+      <div className="location-option">
+        <SearchOptions location={location} setLocation={setLocation} input={inputRef} />
       </div>
     </div>
   )
