@@ -1,8 +1,9 @@
 import React from 'react'
-import { BsFillPlayFill } from 'react-icons/bs'
 import { TbTemperatureCelsius, TbTemperatureFahrenheit } from 'react-icons/tb'
 
 import WeatherBlock from './WeatherBlock'
+import { highlightsData } from '../lib/data'
+import HighlightInfo from './HighlightInfo'
 
 const FontPage = ({ weatherData }) => {
 
@@ -29,52 +30,9 @@ const FontPage = ({ weatherData }) => {
           <h2>Today's Highlights</h2>
           <div className="container">
             <div className="row">
-              <div className="col-6">
-                <article>
-                  <h3>Wind status</h3>
-                  <div className="app__frontpage-info">
-                    <span className='info-value'>{wind_speed}</span>
-                    <span className='info-unit'>mph</span>
-                    <span className='play-icon-holder'>
-                      <BsFillPlayFill />
-                    </span>
-                  </div>
-                </article>
-              </div>
-              <div className="col-6">
-                <article>
-                  <h3>Humidity</h3>
-                  <div className="app__frontpage-info">
-                    <span className='info-value'>{humidity}</span>
-                    <span className='info-unit'> %</span>
-                    <span className="humidity-bar">
-                      <span className='humid-val-0'>0</span>
-                      <span className='humid-val-50'>50</span>
-                      <span className='humid-val-100'>100</span>
-                      <span className='humid-val-percent'>%</span>
-                    </span>
-                  </div>
-                </article>
-              </div>
-              <div className="col-6">
-                <article>
-                  <h3>Visibility</h3>
-                  <div className="app__frontpage-info">
-                    <span className='info-value'>{visibility}</span>
-                    <span className='info-unit'>miles</span>
-
-                  </div>
-                </article>
-              </div>
-              <div className="col-6">
-                <article>
-                  <h3>Air Pressure</h3>
-                  <div className="app__frontpage-info">
-                    <span className='info-value'>{pressure}</span>
-                    <span className='info-unit'> mb</span>
-                  </div>
-                </article>
-              </div>
+              {highlightsData(wind_speed, humidity, visibility, pressure).map(item => (
+                <HighlightInfo data={item} key={item.id} />
+              ))}
             </div>
           </div>
         </section>
