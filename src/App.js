@@ -7,6 +7,7 @@ const App = () => {
 
   const [location, setLocation] = useState("");
   const [weatherData, setWeatherData] = useState([]);
+  const [showSearchForm, setShowSearchForm] = useState(false);
 
   useEffect(() => {
     let response = weatherDataForNDays(6, location)
@@ -19,7 +20,7 @@ const App = () => {
   return (
     <main className='app d-flex'>
       <h1 className='invisible text-center position-absolute'>Weather App</h1>
-      <Sidebar weatherData={weatherData} />
+      <Sidebar {...{ weatherData, showSearchForm, setShowSearchForm }} />
       <FrontPage weatherData={weatherData} />
     </main>
   )
