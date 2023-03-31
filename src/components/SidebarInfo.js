@@ -6,9 +6,15 @@ import { RxDotFilled } from 'react-icons/rx'
 import { images } from '../constants'
 import { viewDate } from '../utils'
 import useGlobalContext from '../context'
+import Spinner from './Spinner'
 
 const SidebarInfo = () => {
-  const { weatherData, setShowSearchForm } = useGlobalContext()
+
+  const { weatherData, setShowSearchForm, loading } = useGlobalContext()
+
+  if (loading) {
+    return <Spinner message="Wait for a while" />
+  }
   const { location } = weatherData
   return (
     <div className='app__sidebar-info'>

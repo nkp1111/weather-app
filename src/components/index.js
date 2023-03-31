@@ -1,2 +1,2 @@
 export { default as Sidebar } from "./Sidebar"
-export { default as FrontPage } from "./FontPage"
+export { default as FrontPage } from "./FrontPage"
