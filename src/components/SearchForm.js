@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { GrClose, GrSearch } from 'react-icons/gr'
-import { HiOutlineChevronRight } from 'react-icons/hi'
 
 import useGlobalContext from '../context'
 import SearchOptions from './SearchOptions'
@@ -19,16 +18,18 @@ const SearchForm = () => {
   return (
     <div className='app__sidebar-search'>
       <div className='app__sidebar-top'>
-        <button className="btn"
+        <button className="btn ms-auto"
           onClick={() => setShowSearchForm(false)}>
           <GrClose className='close-icon' />
         </button>
       </div>
       <div className="app__sidebar-form">
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)}
+          className='app__flex'>
           <label>
-            <GrSearch />
-            <input type="text" ref={inputRef} />
+            <GrSearch className='search-icon' />
+            <input type="text" placeholder='Search location'
+              ref={inputRef} />
           </label>
           <button className='btn'>Search</button>
         </form>
@@ -39,6 +40,17 @@ const SearchForm = () => {
           setLocation={setLocation}
           input={inputRef}
           setShowSearchForm={setShowSearchForm} />
+      </div>
+      <div className="note mt-auto">
+        <span className='invisible'>
+          Location input can be:
+          city-name(Paris), <br />
+          latitude-longitude(48 ,2), <br />
+          ip-address and more...<br />
+        </span>
+        <small>
+          Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
+        </small>
       </div>
     </div>
   )

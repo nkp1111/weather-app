@@ -1,6 +1,6 @@
 /* sidebar  */
-/* sidebar info  */
-.app__sidebar-info {
+.app__sidebar-info,
+.app__sidebar-search {
   display: flex;
   flex-direction: column;
 
@@ -11,6 +11,7 @@
   position: relative;
 }
 
+/* **sidebar info**  */
 /* sidebar top  */
 .app__sidebar-top {
   display: flex;
@@ -55,7 +56,7 @@
   object-fit: cover;
 }
 
-/* sidebar info  */
+/* sidebar stats  */
 .app__sidebar-stats {
   justify-content: space-between;
   flex: 1;
@@ -96,4 +97,111 @@
 
 .place:hover {
   color: var(--white-color);
+}
+
+/* **sidebar search**  */
+/* close button  */
+.app__sidebar-search .btn {
+  background-color: transparent;
+  transition: 0.3s all linear;
+
+  padding: 1rem;
+}
+
+.app__sidebar-search .btn:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.close-icon path {
+  stroke: var(--white-color);
+  stroke-width: 3;
+}
+
+/* form  */
+.app__sidebar-form {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+label {
+  position: relative;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  padding-left: 3rem;
+  margin-right: 1rem;
+
+  background: transparent;
+  border: 2px solid var(--input-border);
+  color: var(--white-color);
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+input::placeholder {
+  color: var(--gray-color);
+}
+
+input:-ms-input-placeholder {
+  color: var(--gray-color);
+}
+
+input::-ms-input-placeholder {
+  color: var(--gray-color);
+}
+
+/* search icon  */
+.search-icon {
+  position: absolute;
+  top: 0.7rem;
+  left: 0;
+
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.search-icon path {
+  stroke: var(--gray-color);
+  stroke-width: 1;
+}
+
+/* search button  */
+.app__sidebar-form .btn {
+  padding: 0.5rem 1.5rem;
+  height: 100%;
+
+  background: var(--btn-background);
+  border: 1px solid transparent;
+  border-radius: 1px;
+
+  color: inherit;
+}
+
+/* dropdown options  */
+.dropdown .btn {
+  text-align: left;
+  border: 1px solid var(--input-border);
+}
+
+.dropdown .btn::after {
+  display: none;
+}
+
+.dropdown-menu {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.dropdown-item {
+  color: var(--white-color);
+  margin-bottom: 2rem;
+}
+
+small {
+  font-size: 0.7rem;
 }
