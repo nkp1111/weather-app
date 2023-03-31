@@ -49,8 +49,8 @@ h6 {
 
 /* general styles  */
 :root {
-  --sidebar-background: #1E213A;
   --main-background: #100E1D;
+  --sidebar-background: #1E213A;
   --humidity-bar-background: #FFEC65;
   --btn-background: #3C47E9;
   --btn-background2: #6E707A;
@@ -71,6 +71,7 @@ h6 {
 body {
   font-size: var(--base-font-size);
   font-family: var(--base-font-family), sans-serif;
+
   background: var(--main-background);
   color: var(--white-color);
 }
@@ -82,8 +83,9 @@ main {
 
 .app__sidebar {
   width: 40%;
-  background: var(--sidebar-background);
   height: 100%;
+
+  background: var(--sidebar-background);
 }
 
 .app__frontpage {

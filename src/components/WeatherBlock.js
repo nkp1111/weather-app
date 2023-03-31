@@ -8,14 +8,14 @@ const WeatherBlock = ({ data }) => {
   const { temperature, condition, icon, ind, date } = data
   const { maxTemp, minTemp, Icon } = getTemperatureForUnit(temperature, temperatureUnit)
   return (
-    <article className='card bg-dark'>
+    <article className='card'>
       <h2>
         {ind === 0
           ? "Tomorrow"
           : viewDate(date)}
       </h2>
       <img src={icon} alt={condition} />
-      <div className='d-flex align-items-center justify-content-between'>
+      <div className='app__flex'>
         <span>{maxTemp}<Icon /></span>
         <span>{minTemp}<Icon /></span>
       </div>

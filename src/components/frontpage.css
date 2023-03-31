@@ -1,0 +1,80 @@
+/* front page  */
+.app__frontpage {
+  padding: var(--padding-y) var(--padding-x);
+}
+
+.app__frontpage-temps {
+  margin-bottom: 2rem;
+}
+
+.app__frontpage-temps .btn {
+  border: none;
+  border-radius: 50%;
+}
+
+.temp-btn,
+.temp-btn:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--btn-background2);
+
+  margin-left: 1rem;
+}
+
+.temp-btn:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.temp-btn.active {
+  background: var(--white-color);
+  color: var(--main-background);
+}
+
+.temp-btn svg {
+  width: 1.5rem;
+  height: 2rem;
+}
+
+/* weather block */
+.app__frontpage-weathers {
+  /* flex-wrap: wrap; */
+  margin-bottom: 2rem;
+}
+
+.app__frontpage-weathers .card {
+  margin-right: 1rem;
+  padding: 1rem;
+
+  background: var(--sidebar-background);
+}
+
+.app__frontpage-weathers .card:last-child {
+  margin-right: 0;
+}
+
+.card h2,
+.card span {
+  font-size: 0.95rem;
+}
+
+.card h2 {
+  text-align: center;
+}
+
+.card img {
+  width: 4rem;
+  height: 4rem;
+
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.card span {
+  display: flex;
+  align-items: center;
+
+  margin: 0 0.5rem;
+}
+
+/* front page stats  */

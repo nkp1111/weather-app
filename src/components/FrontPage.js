@@ -6,6 +6,7 @@ import { highlightsData } from '../lib/data'
 import HighlightInfo from './HighlightInfo'
 import useGlobalContext from '../context'
 import Spinner from './Spinner'
+import "./frontpage.css"
 
 const FontPage = () => {
 
@@ -31,7 +32,7 @@ const FontPage = () => {
         </button>
       </div>
 
-      <div className="app__frontpage-weathers d-flex">
+      <div className="app__frontpage-weathers d-flex justify-content-between">
         {weatherData?.slice(1,).map((item, ind) => <WeatherBlock key={ind} data={{ ...item, ind }} />)}
       </div>
 
