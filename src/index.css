@@ -82,6 +82,7 @@ body {
 
 .app__sidebar {
   width: 33%;
+  min-height: 100vh;
 
   background: var(--dark-blue);
 }

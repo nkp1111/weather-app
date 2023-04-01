@@ -7,11 +7,13 @@
   height: 100%;
   padding: var(--padding-y) var(--padding-x);
   text-align: center;
-
-  position: relative;
 }
 
 /* **sidebar info**  */
+.app__sidebar-info {
+  position: relative;
+}
+
 /* sidebar top  */
 .app__sidebar-top {
   display: flex;
@@ -136,12 +138,14 @@
 
 label {
   position: relative;
+  margin-bottom: 1rem;
 }
 
 input {
   padding: 0.5rem 1rem;
   padding-left: 3rem;
   margin-right: 1rem;
+  flex: 1;
 
   background: transparent;
   border: 2px solid var(--very-light-blue);
@@ -183,6 +187,7 @@ input::-ms-input-placeholder {
 /* search button  */
 .app__sidebar-form .btn {
   padding: 0.6rem 1.5rem;
+  margin-bottom: 1rem;
 
   background: var(--blue);
   border: 1px solid transparent;
@@ -220,8 +225,19 @@ input::-ms-input-placeholder {
   border-radius: 0.5rem;
 }
 
+.note {
+  position: absolute;
+  bottom: 10vh;
+}
+
 small {
   font-size: 0.7rem;
+}
+
+@media screen and (max-width:1350px) {
+  form {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width:750px) {
@@ -240,5 +256,18 @@ small {
 
   .time-and-place {
     margin-bottom: 3rem;
+  }
+
+  form {
+    flex-wrap: nowrap;
+  }
+
+  label {
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  input {
+    width: 100%;
   }
 }

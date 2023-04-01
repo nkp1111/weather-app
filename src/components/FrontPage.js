@@ -52,6 +52,8 @@ const FontPage = () => {
           </div>
         </div>
       </section>
+
+      <div className="user mt-5 lead text-center">created by <a href="https://github.com/nkp1111">Neeraj parmar</a>. devChallenges.io</div>
     </div>
   )
 }
