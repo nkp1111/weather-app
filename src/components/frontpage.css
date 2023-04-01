@@ -23,7 +23,7 @@
 }
 
 .temp-btn:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow-lg);
 }
 
 .temp-btn.active {
@@ -38,13 +38,15 @@
 
 /* weather block */
 .app__frontpage-weathers {
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
 .app__frontpage-weathers .card {
   margin-right: 1rem;
   padding: 1rem;
+  width: 9rem;
+  height: 12rem;
 
   background: var(--dark-blue);
 }
@@ -67,14 +69,22 @@
   height: 4rem;
 
   margin: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card div {
+  justify-content: space-between;
 }
 
 .card span {
   display: flex;
   align-items: center;
 
-  margin: 0 0.5rem;
+  white-space: nowrap;
+}
+
+.card div span:first-child {
+  margin-right: 1rem;
 }
 
 /* front page stats  */
@@ -83,16 +93,32 @@
   font-weight: 700;
 
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.app__frontpage-stats .row {
-  padding: 0;
-  padding-bottom: 2rem;
-}
-
+.app__frontpage-stats .row,
 .app__frontpage-stats .col-6 {
-  padding: 1rem;
+  padding: 0;
+}
+
+.app__frontpage-stats .col-6:nth-child(1) {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.app__frontpage-stats .col-6:nth-child(2) {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+.app__frontpage-stats .col-6:nth-child(3) {
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.app__frontpage-stats .col-6:nth-child(4) {
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
 
 .app__frontpage-stats article {

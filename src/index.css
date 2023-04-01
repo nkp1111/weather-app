@@ -67,6 +67,9 @@ h6 {
 
   --padding-x: 5vw;
   --padding-y: 5vh;
+
+  --box-shadow-lg: 0 0 20px rgba(255, 255, 255, 0.1);
+  --box-shadow-sm: 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -77,14 +80,8 @@ body {
   color: var(--white-color);
 }
 
-main {
-  height: 100vh;
-  width: 100vw;
-}
-
 .app__sidebar {
-  width: 40%;
-  height: 100%;
+  width: 33%;
 
   background: var(--dark-blue);
 }

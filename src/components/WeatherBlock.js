@@ -15,9 +15,9 @@ const WeatherBlock = ({ data }) => {
           : viewDate(date)}
       </h2>
       <img src={icon} alt={condition} />
-      <div className='app__flex'>
-        <span>{maxTemp}<Icon /></span>
-        <span>{minTemp}<Icon /></span>
+      <div className='d-flex'>
+        <span>{maxTemp} &#176;{temperatureUnit[0].toUpperCase()} </span>
+        <span>{minTemp} &#176;{temperatureUnit[0].toUpperCase()} </span>
       </div>
     </article>
   )

@@ -29,6 +29,10 @@
   z-index: 100;
 }
 
+.app__sidebar-top .btn:hover {
+  box-shadow: var(--box-shadow-sm);
+}
+
 .app__sidebar-top .aim-icon {
   color: var(--white-color);
   background: var(--light-blue);
@@ -37,12 +41,14 @@
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.3rem;
+
+  box-shadow: var(--box-shadow-sm);
 }
 
 /* sidebar image  */
 .app__sidebar-image {
-  height: 30vh;
-  margin: 2rem 0;
+  height: 35vh;
+  margin: 3rem 0;
 }
 
 .background {
@@ -109,7 +115,7 @@
 }
 
 .app__sidebar-search .btn:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow-sm);
 }
 
 .close-icon path {
@@ -139,7 +145,7 @@ input {
 
 input:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow-sm);
 }
 
 input::placeholder {
@@ -171,8 +177,7 @@ input::-ms-input-placeholder {
 
 /* search button  */
 .app__sidebar-form .btn {
-  padding: 0.5rem 1.5rem;
-  height: 100%;
+  padding: 0.6rem 1.5rem;
 
   background: var(--blue);
   border: 1px solid transparent;
@@ -184,6 +189,10 @@ input::-ms-input-placeholder {
 /* dropdown options  */
 .dropdown .btn {
   text-align: left;
+  border: 1px solid var(--very-light-blue);
+}
+
+.dropdown .btn:focus {
   border: 1px solid var(--very-light-blue);
 }
 
@@ -199,7 +208,11 @@ input::-ms-input-placeholder {
 
 .dropdown-item {
   color: var(--white-color);
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: 1.2rem;
+
+  transition: 0.3s all linear;
+  border-radius: 0.5rem;
 }
 
 small {
