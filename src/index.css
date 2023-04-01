@@ -49,13 +49,14 @@ h6 {
 
 /* general styles  */
 :root {
-  --main-background: #100E1D;
-  --sidebar-background: #1E213A;
-  --humidity-bar-background: #FFEC65;
-  --btn-background: #3C47E9;
-  --btn-background2: #6E707A;
+  --very-dark-blue: #100E1D;
+  --dark-blue: #1E213A;
+  --blue: #3C47E9;
+  --light-blue: #616475;
+  --very-light-blue: #6E707A;
 
-  --input-border: #616475;
+  --bright-yellow: #FFEC65;
+
 
   --white-color: #E7E7EB;
   --gray-color: #A09FB1;
@@ -72,7 +73,7 @@ body {
   font-size: var(--base-font-size);
   font-family: var(--base-font-family), sans-serif;
 
-  background: var(--main-background);
+  background: var(--very-dark-blue);
   color: var(--white-color);
 }
 
@@ -85,7 +86,7 @@ main {
   width: 40%;
   height: 100%;
 
-  background: var(--sidebar-background);
+  background: var(--dark-blue);
 }
 
 .app__frontpage {

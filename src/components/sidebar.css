@@ -21,7 +21,7 @@
 
 .app__sidebar-top .btn {
   color: var(--white-color);
-  background: var(--btn-background2);
+  background: var(--light-blue);
 
   border-radius: 1px;
   padding: 0.5rem 1.5rem;
@@ -31,7 +31,7 @@
 
 .app__sidebar-top .aim-icon {
   color: var(--white-color);
-  background: var(--btn-background2);
+  background: var(--light-blue);
 
   border-radius: 50%;
   width: 2.5rem;
@@ -133,7 +133,7 @@ input {
   margin-right: 1rem;
 
   background: transparent;
-  border: 2px solid var(--input-border);
+  border: 2px solid var(--very-light-blue);
   color: var(--white-color);
 }
 
@@ -174,7 +174,7 @@ input::-ms-input-placeholder {
   padding: 0.5rem 1.5rem;
   height: 100%;
 
-  background: var(--btn-background);
+  background: var(--blue);
   border: 1px solid transparent;
   border-radius: 1px;
 
@@ -184,7 +184,7 @@ input::-ms-input-placeholder {
 /* dropdown options  */
 .dropdown .btn {
   text-align: left;
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--very-light-blue);
 }
 
 .dropdown .btn::after {
