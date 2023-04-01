@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--btn-background2);
+  background: var(--light-blue);
 
   margin-left: 1rem;
 }
@@ -28,7 +28,7 @@
 
 .temp-btn.active {
   background: var(--white-color);
-  color: var(--main-background);
+  color: var(--very-dark-blue);
 }
 
 .temp-btn svg {
@@ -46,7 +46,7 @@
   margin-right: 1rem;
   padding: 1rem;
 
-  background: var(--sidebar-background);
+  background: var(--dark-blue);
 }
 
 .app__frontpage-weathers .card:last-child {
@@ -78,3 +78,105 @@
 }
 
 /* front page stats  */
+.app__frontpage-stats h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.app__frontpage-stats .row {
+  padding: 0;
+  padding-bottom: 2rem;
+}
+
+.app__frontpage-stats .col-6 {
+  padding: 1rem;
+}
+
+.app__frontpage-stats article {
+  background: var(--dark-blue);
+
+  padding: 1rem;
+  text-align: center;
+  height: max-content;
+}
+
+.app__frontpage-stats h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.info-value {
+  font-size: 4rem;
+  margin-right: 0.3rem;
+}
+
+.info-unit {
+  font-size: 2rem;
+}
+
+/* wind status component icon  */
+.play-icon-holder {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.play-icon-holder span:first-child {
+  border-radius: 50%;
+
+  background: var(--light-blue);
+
+  padding: 0.3rem;
+  margin-right: 0.5rem;
+}
+
+/* humidity progress bar  */
+.humidity-bar {
+  position: relative;
+
+  width: 100%;
+  height: 8px;
+  margin: 2rem 0;
+
+  border-radius: 5px;
+  background: var(--bright-yellow);
+  background: var(--white-color);
+}
+
+.humidity-bar span {
+  position: absolute;
+}
+
+.humid-val-0 {
+  left: 0;
+  top: -330%;
+}
+
+.humid-val-50 {
+  left: 50%;
+  top: -330%;
+
+  transform: translate(-50%, 0);
+}
+
+.humid-val-100 {
+  right: 0;
+  top: -330%;
+}
+
+.humid-val-percent {
+  right: 0;
+  top: 100%;
+}
+
+.humid-background {
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  background: var(--bright-yellow);
+  width: 50%;
+  border-radius: 6px;
+}
