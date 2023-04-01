@@ -6,8 +6,8 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
+    <a href="https://weather-app-nkp1111.vercel.app/">
+      Live app
     </a>
     <span> | </span>
     <a href="https://github.com/nkp1111/weather-app">
@@ -31,12 +31,14 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](./src/assets/screencapture-localhost-3000-2023-04-01-14_03_25.png)
 
 ### Built With
 
 - [React](https://reactjs.org/)
 - Bootstrap
+- react-icons
+- react-loader-spinner
 
 ## Features
 
