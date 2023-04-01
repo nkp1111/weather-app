@@ -10,6 +10,7 @@ const AppProvider = ({ children }) => {
   const [showSearchForm, setShowSearchForm] = useState(false);
   const [loading, setLoading] = useState(true);
   const [temperatureUnit, setTemperatureUnit] = useState("cel");
+  const [dayIndex, setDayIndex] = useState(0);
 
   const handleLocationChange = (location) => {
     setLoading(true)
@@ -25,8 +26,6 @@ const AppProvider = ({ children }) => {
     handleLocationChange(location)
   }, [location]);
 
-  console.log(location)
-
   return (
     <AppContext.Provider
       value={{
@@ -38,6 +37,8 @@ const AppProvider = ({ children }) => {
         loading,
         temperatureUnit,
         setTemperatureUnit,
+        dayIndex,
+        setDayIndex,
       }}
     >
       {children}

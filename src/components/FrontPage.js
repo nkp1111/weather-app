@@ -10,13 +10,13 @@ import "./frontpage.css"
 
 const FontPage = () => {
 
-  const { weatherData, loading, temperatureUnit, setTemperatureUnit, } = useGlobalContext()
+  const { weatherData, loading, temperatureUnit, setTemperatureUnit, dayIndex } = useGlobalContext()
 
   if (loading) {
     return <Spinner message="Loading data. Please wait..." />
   }
 
-  let { wind_speed, humidity, visibility, pressure } = weatherData[0]
+  let { wind_speed, humidity, visibility, pressure } = weatherData[dayIndex]
 
   return (
     <div className='app__frontpage'>
@@ -33,11 +33,17 @@ const FontPage = () => {
       </div>
 
       <div className="app__frontpage-weathers d-flex">
-        {weatherData?.slice(1,).map((item, ind) => <WeatherBlock key={ind} data={{ ...item, ind }} />)}
+        {weatherData?.map((item, ind) => {
+          if (dayIndex !== ind) {
+            return <WeatherBlock key={ind} data={{ ...item, ind }} />
+          }
+        })}
       </div>
 
       <section className="app__frontpage-stats">
-        <h2>Today's Highlights</h2>
+        <h2> {dayIndex === 0
+          ? "Today"
+          : `${dayIndex} day earlier`}'s Highlights</h2>
         <div className="container">
           <div className="row">
             {highlightsData(wind_speed, humidity, visibility, pressure).map(item => (

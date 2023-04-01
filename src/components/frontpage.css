@@ -52,6 +52,13 @@
   height: 12rem;
 
   background: var(--dark-blue);
+
+  cursor: pointer;
+  transition: 0.3s all linear;
+}
+
+.app__frontpage-weathers .card:hover {
+  box-shadow: var(--box-shadow-sm);
 }
 
 .app__frontpage-weathers .card:last-child {

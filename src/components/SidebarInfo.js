@@ -10,12 +10,12 @@ import Spinner from './Spinner'
 
 const SidebarInfo = () => {
 
-  const { weatherData, setShowSearchForm, loading, temperatureUnit } = useGlobalContext()
+  const { weatherData, setShowSearchForm, loading, temperatureUnit, dayIndex } = useGlobalContext()
 
   if (loading) {
     return <Spinner message="Wait for a while" />
   }
-  const { location, condition, icon, temperature } = weatherData[0]
+  const { location, condition, icon, temperature, date } = weatherData[dayIndex]
   const { avgTemp, Icon } = getTemperatureForUnit(temperature, temperatureUnit)
 
   return (
@@ -46,11 +46,15 @@ const SidebarInfo = () => {
         </div>
         <div className="time-and-place">
           <div className="time app__flex">
-            Today
+            {dayIndex === 0
+              ? "Today"
+              : `${dayIndex} Days ago`}
             <span>
               <RxDotFilled />
             </span>
-            {viewDate()}
+            {dayIndex === 0
+              ? viewDate()
+              : viewDate(date)}
           </div>
           <div className="place app__flex" onClick={() => setShowSearchForm(true)}>
             <span>
