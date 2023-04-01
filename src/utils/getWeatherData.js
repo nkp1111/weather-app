@@ -1,7 +1,7 @@
 const getWeatherData = async (location, date = "today") => {
   // returns weather data of a particular location and date default today
   // date format "yyyy-mm-dd"
-  const baseUrl = "http://api.weatherapi.com/v1/"
+  const baseUrl = "https://api.weatherapi.com/v1/"
 
   if (!location) {
     location = "ahmedabad"
