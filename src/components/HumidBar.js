@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const HumidBar = () => {
+const HumidBar = ({ value }) => {
+
+  useEffect(() => {
+    document.querySelector(".humid-background").style.width = value + "%"
+  })
+
   return (
     <div className="humidity-bar">
       <span className="humid-background"></span>

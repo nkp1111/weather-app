@@ -14,7 +14,7 @@ const HighlightInfo = ({ data }) => {
           {data.title === "Wind status"
             ? <WindIcon />
             : data.title === "Humidity"
-              ? <HumidBar />
+              ? <HumidBar value={data.value} />
               : null}
         </div>
       </article>

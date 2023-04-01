@@ -177,6 +177,7 @@
   bottom: 0;
 
   background: var(--bright-yellow);
-  width: 50%;
   border-radius: 6px;
+
+  transition: all 0.3s linear;
 }
