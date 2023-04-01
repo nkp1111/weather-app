@@ -32,7 +32,7 @@ const FontPage = () => {
         </button>
       </div>
 
-      <div className="app__frontpage-weathers d-flex justify-content-between">
+      <div className="app__frontpage-weathers d-flex">
         {weatherData?.slice(1,).map((item, ind) => <WeatherBlock key={ind} data={{ ...item, ind }} />)}
       </div>
 

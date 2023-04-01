@@ -99,3 +99,13 @@ body {
 .btn:focus {
   border: none;
 }
+
+@media screen and (max-width:750px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .app__sidebar {
+    width: 100%;
+  }
+}

@@ -4,7 +4,7 @@ import HumidBar from './HumidBar'
 
 const HighlightInfo = ({ data }) => {
   return (
-    <div className="col-6">
+    <div className="col-md-6">
       <article>
         <h3>{data.title}</h3>
         <div className="app__frontpage-info">
